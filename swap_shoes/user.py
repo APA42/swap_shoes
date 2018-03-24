@@ -11,3 +11,6 @@ class User(object):
     @property
     def name(self):
         return self._name
+
+    def __str__(self):
+        return 'name:{} feet_size:{}'.format(self._name, self._feet_size)
