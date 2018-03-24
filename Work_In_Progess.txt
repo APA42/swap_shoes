@@ -4,9 +4,14 @@ Functionalities
 - Add new user
 
 --> offered
---> needed
+--> needs
 
 ----> Left leg
 ----> Right leg
 ----> Size
 
+
++++++++++
++ Notes +
++++++++++
+->Size depends on country :-(
