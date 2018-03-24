@@ -3,4 +3,10 @@ Functionalities
 
 - Add new user
 
+--> offered
+--> needed
+
+----> Left leg
+----> Right leg
+----> Size
 
