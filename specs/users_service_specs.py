@@ -30,3 +30,19 @@ with description('User Service') as self:
                     self.user_service.add(AN_USER_NAME, AN_USER_PASSWORD)
 
                 expect(add_user_with_name_already_used).to(raise_error(exceptions.UsernameAlreadyUsed))
+
+        with context('when validating mandatory fields'):
+            with context('validating name field'):
+                with context('when the name is not provided'):
+                    with it('raises UsernameCanNotBeNoneError'):
+                        def add_user_without_name():
+                            self.user_service.add(None, AN_USER_PASSWORD)
+
+                        expect(add_user_without_name).to(raise_error(exceptions.UsernameCanNotBeNoneError))
+
+                with context('when the name is \'\''):
+                    with it('raises UsernameCanNotBeEmptyError'):
+                        def add_user_with_empty_name():
+                            self.user_service.add('', AN_USER_PASSWORD)
+
+                        expect(add_user_with_empty_name).to(raise_error(exceptions.UsernameCanNotBeEmptyError))

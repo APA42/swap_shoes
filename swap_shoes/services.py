@@ -9,6 +9,10 @@ class UserService(object):
         self._user_repository = user_repository
 
     def add(self, name, password):
+        if name is None:
+            raise exceptions.UsernameCanNotBeNoneError()
+        if len(name) == 0:
+            raise exceptions.UsernameCanNotBeEmptyError()
         if self._user_repository.find_by_name(name) is not None:
             raise exceptions.UsernameAlreadyUsed()
 
